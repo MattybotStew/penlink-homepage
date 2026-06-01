@@ -1450,9 +1450,13 @@
   margin: 0 auto;
   max-width: 760px;
 }
+.plhp-carousel__stage-wrap {
+  position: relative;
+}
 .plhp-carousel__stage {
   position: relative;
   height: 420px;
+  overflow: hidden;
 }
 .plhp-carousel__deco-a {
   position: absolute;
@@ -1483,7 +1487,6 @@
   display: flex;
   align-items: center;
   z-index: 2;
-  overflow: hidden;
 }
 .plhp-carousel__track {
   display: flex;
@@ -2413,6 +2416,7 @@
         <p>Penlink's data analysis software integrates intelligence gathering, evidence management, and AI-powered analytics into a unified solution. We believe in the power of data-driven intelligence to accelerate clarity for your most critical missions.</p>
       </div>
 
+      <div class="plhp-carousel__stage-wrap">
       <div class="plhp-carousel__stage">
         <div class="plhp-carousel__deco-a" aria-hidden="true"></div>
         <div class="plhp-carousel__deco-b" aria-hidden="true"></div>
@@ -2476,6 +2480,8 @@
 
           </div>
         </div>
+
+      </div>
 
         <button class="plhp-carousel__arrow plhp-carousel__arrow--prev" id="plhp-carousel-prev" aria-label="Previous slide">
           <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="14,4 7,11 14,18"/></svg>
