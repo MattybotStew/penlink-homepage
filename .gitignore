@@ -24,3 +24,14 @@ build/
 # Logs
 *.log
 npm-debug.log*
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+
+# Temp / AI-generated files
+gemini-code-*.md
