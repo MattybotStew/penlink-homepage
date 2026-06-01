@@ -1,0 +1,17 @@
+{
+  "name": "penlink-homepage",
+  "version": "1.0.0",
+  "description": "Penlink Homepage - CoAnalyst 360 Marketing Site",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "npx http-server public -p 8080 -o",
+    "serve": "npx http-server public -p 8080",
+    "build": "node build.js"
+  },
+  "keywords": ["penlink", "coanalyst", "agentic-ai"],
+  "author": "Penlink Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penlink — Homepage update (May 2026)</title>
+  <link rel="icon" href="f9b63046-9f85-41ed-b94a-28780a6e51bc">
+
+  <!-- Resources referenced from inline JS (not HTML attrs) — listed so the
+       bundler inlines them and exposes blob URLs on window.__resources. -->
+  
+  
+
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("7203e53b-a11f-4ee1-800c-3966c8560012") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("63ce8a28-0e6c-4a09-a7f3-8c9b7a728421") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("04eea2bc-2f01-478b-80f7-a90aac65f1bf") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("1b81294f-1ae1-4617-a77b-001ac72ab6dd") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("466c44bf-4ca8-4819-b91b-7c1cdf573df5") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("4c442bdc-53cb-41af-b2e8-7091a5dba235") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("7203e53b-a11f-4ee1-800c-3966c8560012") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("63ce8a28-0e6c-4a09-a7f3-8c9b7a728421") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("04eea2bc-2f01-478b-80f7-a90aac65f1bf") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("1b81294f-1ae1-4617-a77b-001ac72ab6dd") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("466c44bf-4ca8-4819-b91b-7c1cdf573df5") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("4c442bdc-53cb-41af-b2e8-7091a5dba235") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("cfeffb81-a964-417e-8a17-8d3f73be7c1c") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("13202ed6-5185-4d56-88c2-2d471e7a828b") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("1df83fed-d8d5-44f9-a4c6-a02ec755dfe8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("dd9d5a35-621d-4324-a087-2ed6df10d659") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("cfeffb81-a964-417e-8a17-8d3f73be7c1c") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("13202ed6-5185-4d56-88c2-2d471e7a828b") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("1df83fed-d8d5-44f9-a4c6-a02ec755dfe8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("dd9d5a35-621d-4324-a087-2ed6df10d659") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("cfeffb81-a964-417e-8a17-8d3f73be7c1c") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("13202ed6-5185-4d56-88c2-2d471e7a828b") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("1df83fed-d8d5-44f9-a4c6-a02ec755dfe8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("dd9d5a35-621d-4324-a087-2ed6df10d659") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("cfeffb81-a964-417e-8a17-8d3f73be7c1c") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("13202ed6-5185-4d56-88c2-2d471e7a828b") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("1df83fed-d8d5-44f9-a4c6-a02ec755dfe8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("dd9d5a35-621d-4324-a087-2ed6df10d659") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+  <!-- Production stylesheet — the only thing the dev needs to enqueue -->
+  <style>/* =====================================================================
+   Penlink homepage update — May 2026
+   Self-contained styles for three new blocks:
+     1. .plhp-hero            (video-bg hero with light AI scrim)
+     2. .plhp-co360           (CoAnalyst 360 feature with animation slot)
+     3. .plhp-mission         (Mission / CEO letter block)
+
+   All classes prefixed plhp- to avoid collisions with the existing
+   WordPress theme. Values are baked literals — no dependency on
+   global CSS custom properties. Tokens are scoped to .plhp-block.
+   ===================================================================== */
+
+.plhp-block {
+  /* Color tokens — scoped to this stylesheet only */
+  --c-paper:        #ffffff;
+  --c-paper-warm:   #fbf9f4;
+  --c-cream:        #f5f1e8;
+
+  --c-ink-900:      #0a1838;
+  --c-ink-800:      #1b2a47;
+  --c-ink-700:      #2f3e5e;
+  --c-ink-500:      #4a5878;
+  --c-ink-400:      #6b7796;
+  --c-ink-300:      #99a4bd;
+  --c-ink-200:      #c8cfdd;
+  --c-ink-100:      #e2e7f0;
+  --c-ink-050:      #f2f5fa;
+
+  --c-blue-700:     #1b3fb8;
+  --c-blue-600:     #2a5ce6;
+  --c-blue-500:     #3472f4;
+  --c-blue-100:     #dbe6ff;
+
+  --c-cyan-600:     #00b6a3;
+  --c-cyan-500:     #00dcc3;
+  --c-cyan-300:     #7af0e0;
+  --c-cyan-100:     #d4f8f2;
+
+  --c-green-spring: #daf355;
+
+  --grad-brand:     linear-gradient(95deg, #1b3fb8 0%, #3472f4 35%, #00dcc3 70%, #daf355 100%);
+  --grad-blue-cyan: linear-gradient(95deg, #3472f4 0%, #00dcc3 100%);
+  --grad-cyan-lime: linear-gradient(95deg, #7af0e0 0%, #daf355 100%);
+
+  --shadow-sm:      0 1px 2px rgba(10, 24, 56, 0.06), 0 1px 3px rgba(10, 24, 56, 0.04);
+  --shadow-md:      0 4px 12px rgba(10, 24, 56, 0.08), 0 2px 4px rgba(10, 24, 56, 0.04);
+  --shadow-lg:      0 12px 32px rgba(10, 24, 56, 0.12), 0 4px 8px rgba(10, 24, 56, 0.06);
+  --shadow-xl:      0 24px 60px rgba(10, 24, 56, 0.18), 0 8px 16px rgba(10, 24, 56, 0.08);
+
+  --r-sm:           6px;
+  --r-md:           10px;
+  --r-lg:           14px;
+  --r-xl:           20px;
+  --r-2xl:          28px;
+  --r-3xl:          40px;
+  --r-pill:         999px;
+
+  --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-std:       cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:       120ms;
+  --dur-base:       200ms;
+  --dur-slow:       360ms;
+
+  --font-display:   'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans:      'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:      'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+/* ---- Shared container ----------------------------------------------- */
+.plhp-block * { box-sizing: border-box; }
+.plhp-block {
+  font-family: var(--font-sans);
+  color: var(--c-ink-900);
+  -webkit-font-smoothing: antialiased;
+}
+.plhp-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+}
+
+/* ---- Buttons (shared across new blocks) ----------------------------- */
+.plhp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--r-md);
+  border: 1px solid transparent;
+  font: 600 15px/1 var(--font-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out),
+              color var(--dur-base) var(--ease-out);
+  white-space: nowrap;
+}
+.plhp-btn--primary {
+  background: var(--grad-blue-cyan);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.plhp-btn--primary:hover {
+  background: linear-gradient(95deg, #2a5ce6 0%, #00b6a3 100%);
+  box-shadow: var(--shadow-md);
+  color: #fff;
+}
+.plhp-btn--secondary {
+  background: #fff;
+  color: var(--c-ink-900);
+  border-color: var(--c-ink-200);
+}
+.plhp-btn--secondary:hover {
+  background: var(--c-ink-050);
+  color: var(--c-ink-900);
+}
+.plhp-btn--on-dark {
+  background: #fff;
+  color: var(--c-ink-900);
+}
+.plhp-btn--on-dark:hover {
+  background: var(--c-ink-050);
+  color: var(--c-ink-900);
+}
+.plhp-btn--ghost-on-dark {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.plhp-btn--ghost-on-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.plhp-btn .plhp-arrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.plhp-btn:hover .plhp-arrow { transform: translateX(2px); }
+
+/* Small circular play icon — for buttons that lead to video / demo content */
+.plhp-btn__play {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--grad-blue-cyan);
+  color: #fff;
+  font-size: 8px;
+  flex: none;
+  margin-right: -4px;        /* tighten against the label */
+  margin-left: -6px;         /* tuck against the left edge of the button */
+  box-shadow: 0 1px 3px rgba(10, 24, 56, 0.15);
+}
+.plhp-btn__play svg { width: 9px; height: 9px; display: block; }
+.plhp-btn--primary .plhp-btn__play,
+.plhp-btn--on-dark .plhp-btn__play {
+  /* On filled buttons, render the icon as a white-on-translucent circle */
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ---- Eyebrow -------------------------------------------------------- */
+.plhp-eyebrow {
+  display: inline-block;
+  font: 600 12px/1 var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-500);
+}
+.plhp-eyebrow--on-dark { color: rgba(255, 255, 255, 0.78); }
+
+/* =====================================================================
+   1. HERO — full-bleed video bg, light AI scrim, glass overlays
+   ===================================================================== */
+.plhp-hero {
+  position: relative;
+  isolation: isolate;
+  color: #fff;
+  min-height: 720px;
+  padding: 160px 0 120px;
+  overflow: hidden;
+  background: #0a1838; /* solid fallback under the video */
+}
+
+/* Video layer */
+.plhp-hero__video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+.plhp-hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Animated fallback that runs underneath in case the video fails / is delayed */
+.plhp-hero__video-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 18% 28%, rgba(52, 114, 244, 0.55), transparent 55%),
+    radial-gradient(ellipse at 78% 72%, rgba(0, 220, 195, 0.40), transparent 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(218, 243, 85, 0.10), transparent 60%),
+    linear-gradient(135deg, #04102a 0%, #0a1838 60%, #1b3fb8 100%);
+  animation: plhp-bg-drift 24s ease-in-out infinite alternate;
+}
+@keyframes plhp-bg-drift {
+  0%   { background-position: 0% 0%, 100% 100%, 50% 50%, 0 0; transform: scale(1); }
+  100% { background-position: 8% 12%, 92% 86%, 60% 40%, 0 0; transform: scale(1.04); }
+}
+
+/* Scrim — light at top, deeper at bottom for legibility */
+.plhp-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg,
+      rgba(10, 24, 56, 0.35) 0%,
+      rgba(10, 24, 56, 0.20) 40%,
+      rgba(10, 24, 56, 0.55) 100%);
+}
+
+/* Faint vertical accent line on the right — the "AI rail" */
+.plhp-hero__rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 7%;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(122, 240, 224, 0.4) 30%,
+    rgba(218, 243, 85, 0.4) 60%,
+    transparent 100%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Hero content grid */
+.plhp-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  align-items: end;
+  position: relative;
+  z-index: 1;
+}
+.plhp-hero__copy {
+  max-width: 780px;
+}
+
+/* Eyebrow pill — glass-style on video */
+.plhp-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px 6px 6px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--r-pill);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font: 600 12px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 28px;
+}
+.plhp-hero__tag-pip {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background: var(--grad-blue-cyan);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.plhp-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6.5vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 28px;
+  text-wrap: balance;
+  text-shadow: 0 2px 40px rgba(10, 24, 56, 0.35);
+}
+.plhp-hero h1 .plhp-accent {
+  background: var(--grad-cyan-lime);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.plhp-hero__lead {
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 640px;
+  margin: 0 0 36px;
+  text-wrap: pretty;
+  text-shadow: 0 1px 20px rgba(10, 24, 56, 0.35);
+}
+
+.plhp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+/* Watch-film pill */
+.plhp-hero__play {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 22px 8px 8px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--r-pill);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font: 600 15px/1 var(--font-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-out);
+}
+.plhp-hero__play:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+  color: #fff;
+}
+.plhp-hero__play-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--grad-blue-cyan);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 10px;
+}
+.plhp-hero__play-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+/* Trust strip — sits over the bottom of the hero */
+.plhp-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  max-width: 720px;
+}
+.plhp-hero__trust strong {
+  color: #fff;
+  font-weight: 600;
+}
+.plhp-hero__trust-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.32);
+  display: inline-block;
+}
+
+/* Floating "Active Workflow" card */
+.plhp-hero__card {
+  position: absolute;
+  right: 8%;
+  bottom: 96px;
+  width: 320px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--r-xl);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-xl);
+  color: var(--c-ink-900);
+  z-index: 2;
+  animation: plhp-card-in 800ms var(--ease-out) 300ms both;
+}
+@keyframes plhp-card-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.plhp-hero__card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.plhp-hero__card-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--grad-blue-cyan);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font: 700 11px/1 var(--font-sans);
+  letter-spacing: 0.04em;
+  flex: none;
+}
+.plhp-hero__card-label {
+  font: 600 10px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink-400);
+  margin-bottom: 4px;
+}
+.plhp-hero__card-title {
+  font: 600 14px/1.35 var(--font-sans);
+  color: var(--c-ink-900);
+}
+.plhp-hero__card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--c-ink-100);
+}
+.plhp-hero__card-grid .k {
+  font: 600 10px/1.2 var(--font-sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-ink-400);
+  margin-bottom: 4px;
+}
+.plhp-hero__card-grid .v {
+  font: 600 15px/1.2 var(--font-display);
+  color: var(--c-ink-900);
+  letter-spacing: -0.01em;
+}
+
+/* Live chip — top corner of hero */
+.plhp-hero__live {
+  position: absolute;
+  top: 100px;
+  right: 8%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--r-pill);
+  font: 600 11px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink-900);
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+.plhp-hero__live::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1fa37a;
+  box-shadow: 0 0 0 4px rgba(31, 163, 122, 0.20);
+  animation: plhp-pulse 2.4s var(--ease-std) infinite;
+}
+@keyframes plhp-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(0.85); }
+}
+
+/* =====================================================================
+   2. COANALYST 360 — paper background, split layout, animation slot
+   ===================================================================== */
+.plhp-co360 {
+  background: var(--c-paper);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+/* Soft brand wash that ties this section to the hero gradient above */
+.plhp-co360::before {
+  content: "";
+  position: absolute;
+  top: -240px;
+  left: -120px;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(52, 114, 244, 0.08), transparent 65%);
+  pointer-events: none;
+}
+.plhp-co360::after {
+  content: "";
+  position: absolute;
+  bottom: -180px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 220, 195, 0.10), transparent 65%);
+  pointer-events: none;
+}
+
+.plhp-co360__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.plhp-co360__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  background: var(--c-ink-050);
+  border: 1px solid var(--c-ink-100);
+  border-radius: var(--r-pill);
+  font: 600 11px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink-700);
+  margin-bottom: 24px;
+}
+.plhp-co360__tag-pip {
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  background: var(--grad-blue-cyan);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.plhp-co360 h2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.2vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--c-ink-900);
+  margin: 0 0 24px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.plhp-co360 h2 .plhp-accent {
+  background: var(--grad-blue-cyan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.plhp-co360__lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--c-ink-500);
+  margin: 0 0 32px;
+  max-width: 540px;
+  text-wrap: pretty;
+}
+
+.plhp-co360__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.plhp-co360__bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--c-ink-700);
+}
+.plhp-co360__bullets li strong {
+  color: var(--c-ink-900);
+  font-weight: 600;
+}
+.plhp-co360__bullets .plhp-check {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--grad-cyan-lime);
+  color: var(--c-ink-900);
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.plhp-co360__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---- Animation slot (drop-in target for client animation) ----------- */
+.plhp-co360__anim {
+  position: relative;
+  border-radius: var(--r-3xl);
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(52, 114, 244, 0.14) 0%, rgba(0, 220, 195, 0.10) 50%, rgba(218, 243, 85, 0.08) 100%);
+  box-shadow: var(--shadow-xl);
+}
+.plhp-co360__anim-frame {
+  position: relative;
+  border-radius: calc(var(--r-3xl) - 8px);
+  overflow: hidden;
+  background: linear-gradient(160deg, #04102a 0%, #0a1838 60%, #1b3fb8 100%);
+  aspect-ratio: 5 / 4.4;
+  padding: 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+/* Subtle background grid pattern inside the animation frame */
+.plhp-co360__anim-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(122, 240, 224, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 240, 224, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at 50% 50%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 30%, transparent 80%);
+}
+
+.plhp-co360__anim-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1;
+}
+.plhp-co360__anim-dots {
+  display: flex;
+  gap: 5px;
+}
+.plhp-co360__anim-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: inline-block;
+}
+.plhp-co360__anim-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+}
+.plhp-co360__anim-status {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.62);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.plhp-co360__anim-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-cyan-500);
+  animation: plhp-pulse 2.4s var(--ease-std) infinite;
+}
+
+/* Animation body (vanilla JS drives the contents) */
+.plhp-co360__anim-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Message bubble */
+.plhp-msg {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 480ms var(--ease-out), transform 480ms var(--ease-out);
+}
+.plhp-msg.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.plhp-msg__who {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 11px/1 var(--font-sans);
+  letter-spacing: 0.04em;
+}
+.plhp-msg--user .plhp-msg__who {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+.plhp-msg--agent .plhp-msg__who {
+  background: var(--grad-blue-cyan);
+  color: #fff;
+}
+.plhp-msg__body {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 14px;
+  border-radius: var(--r-lg);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+.plhp-msg--user .plhp-msg__body {
+  background: rgba(52, 114, 244, 0.14);
+  border-color: rgba(52, 114, 244, 0.28);
+  color: #fff;
+}
+.plhp-msg__body strong { color: #fff; font-weight: 600; }
+.plhp-msg__body .typing-caret {
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  background: var(--c-cyan-300);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: plhp-blink 1s steps(2, start) infinite;
+}
+@keyframes plhp-blink { 50% { opacity: 0; } }
+
+/* Agent tools row */
+.plhp-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.plhp-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: rgba(0, 220, 195, 0.12);
+  border: 1px solid rgba(0, 220, 195, 0.24);
+  color: var(--c-cyan-300);
+  font: 500 10.5px/1 var(--font-mono);
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 360ms var(--ease-out), transform 360ms var(--ease-out);
+}
+.plhp-tool.is-in { opacity: 1; transform: translateY(0); }
+.plhp-tool::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-cyan-300);
+}
+
+/* Insight chips */
+.plhp-insight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.plhp-chip {
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+}
+.plhp-chip.is-in { opacity: 1; transform: translateY(0); }
+.plhp-chip .k {
+  font: 600 9.5px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.plhp-chip .v {
+  font: 600 15px/1.2 var(--font-display);
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.plhp-chip .v.is-accent {
+  background: var(--grad-cyan-lime);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Thinking indicator */
+.plhp-thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--c-cyan-300);
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.plhp-thinking .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-cyan-300);
+  animation: plhp-think 1.4s var(--ease-std) infinite;
+}
+.plhp-thinking .dot:nth-child(2) { animation-delay: 0.2s; }
+.plhp-thinking .dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes plhp-think {
+  0%, 80%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}
+
+/* "Restart" button — small, bottom-right of frame */
+.plhp-co360__anim-restart {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 5px 12px 5px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-pill);
+  color: rgba(255, 255, 255, 0.7);
+  font: 500 10.5px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--dur-base) var(--ease-out);
+}
+.plhp-co360__anim-restart:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+/* =====================================================================
+   3. MISSION — paper background, CEO letter format
+   ===================================================================== */
+.plhp-mission {
+  background: var(--c-paper);
+  padding: 80px 0 120px;
+  position: relative;
+}
+
+.plhp-mission__card {
+  background: var(--c-paper-warm);
+  border: 1px solid var(--c-ink-100);
+  border-radius: var(--r-3xl);
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.plhp-mission__card::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 360px;
+  height: 360px;
+  background: var(--grad-brand);
+  filter: blur(120px);
+  opacity: 0.08;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.plhp-mission__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.plhp-mission__lead h2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--c-ink-900);
+  margin: 16px 0 28px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.plhp-mission__lead h2 .plhp-accent {
+  background: var(--grad-blue-cyan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.plhp-mission__lead-body {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--c-ink-700);
+  margin: 0 0 32px;
+  max-width: 580px;
+  text-wrap: pretty;
+}
+
+.plhp-mission__quote {
+  position: relative;
+  margin: 0 0 36px;
+  padding: 28px 28px 28px 56px;
+  background: rgba(255, 255, 255, 0.7);
+  border-left: 3px solid var(--c-blue-500);
+  border-radius: 0 var(--r-lg) var(--r-lg) 0;
+}
+.plhp-mission__quote-mark {
+  position: absolute;
+  top: 4px;
+  left: 18px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 76px;
+  line-height: 1;
+  color: var(--c-blue-500);
+  opacity: 0.28;
+}
+.plhp-mission__quote p {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--c-ink-900);
+  margin: 0;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.plhp-mission__author {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--c-ink-100);
+}
+.plhp-mission__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: none;
+  background: var(--grad-blue-cyan);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font: 700 18px/1 var(--font-display);
+  letter-spacing: -0.01em;
+  box-shadow: var(--shadow-sm);
+}
+.plhp-mission__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.plhp-mission__author-who { flex: 1; min-width: 0; }
+.plhp-mission__author-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--c-ink-900);
+  letter-spacing: -0.01em;
+}
+.plhp-mission__author-role {
+  font-size: 11px;
+  color: var(--c-ink-400);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.plhp-mission__read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-blue-600);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.plhp-mission__read:hover {
+  border-bottom-color: currentColor;
+  color: var(--c-blue-700);
+}
+
+/* Side panel */
+.plhp-mission__side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.plhp-mission__pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.plhp-mission__pillar {
+  background: var(--c-paper);
+  border: 1px solid var(--c-ink-100);
+  border-radius: var(--r-lg);
+  padding: 22px 26px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  transition: all var(--dur-base) var(--ease-out);
+}
+.plhp-mission__pillar:hover {
+  border-color: var(--c-blue-100);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(2px);
+}
+.plhp-mission__pillar-num {
+  font: 700 13px/1 var(--font-mono);
+  color: var(--c-blue-600);
+  letter-spacing: 0.06em;
+  padding-top: 3px;
+}
+.plhp-mission__pillar h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--c-ink-900);
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.plhp-mission__pillar p {
+  font-size: 13.5px;
+  color: var(--c-ink-500);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.plhp-mission__impact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 24px;
+  background: var(--c-paper);
+  border: 1px solid var(--c-ink-100);
+  border-radius: var(--r-xl);
+}
+.plhp-mission__impact-cell {
+  text-align: left;
+}
+.plhp-mission__impact-num {
+  font: 600 28px/1 var(--font-display);
+  letter-spacing: -0.025em;
+  color: var(--c-ink-900);
+  margin-bottom: 6px;
+  background: var(--grad-blue-cyan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.plhp-mission__impact-label {
+  font-size: 11px;
+  color: var(--c-ink-500);
+  line-height: 1.4;
+}
+
+.plhp-mission__foot {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--c-ink-100);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 36px;
+  align-items: center;
+}
+.plhp-mission__foot-copy {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--c-ink-500);
+  max-width: 520px;
+}
+.plhp-mission__foot-copy strong {
+  color: var(--c-ink-900);
+  font-weight: 600;
+}
+.plhp-mission__foot-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 1100px) {
+  .plhp-hero {
+    padding: 120px 0 100px;
+    min-height: 640px;
+  }
+  .plhp-hero__live,
+  .plhp-hero__card {
+    display: none;
+  }
+  .plhp-co360 { padding: 80px 0; }
+  .plhp-co360__grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .plhp-mission { padding: 60px 0 80px; }
+  .plhp-mission__card { padding: 48px; }
+  .plhp-mission__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .plhp-mission__foot {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .plhp-container { padding: 0 20px; }
+  .plhp-hero {
+    padding: 100px 0 80px;
+    min-height: 560px;
+  }
+  .plhp-hero__lead { font-size: 16px; }
+  .plhp-hero__actions { gap: 10px; }
+  .plhp-hero__trust { gap: 12px; font-size: 13px; }
+  .plhp-co360 { padding: 64px 0; }
+  .plhp-co360__anim-frame { padding: 18px; }
+  .plhp-mission { padding: 48px 0 64px; }
+  .plhp-mission__card { padding: 32px 24px; border-radius: var(--r-xl); }
+  .plhp-mission__quote { padding: 24px 20px 24px 48px; }
+  .plhp-mission__impact { grid-template-columns: 1fr; gap: 18px; }
+  .plhp-mission__foot-cta { flex-direction: column; align-items: stretch; }
+  .plhp-mission__foot-cta .plhp-btn { justify-content: center; }
+}
+</style>
+
+  <style>
+    /* =================================================================
+       Preview-only chrome (nav + footer). Not part of the deliverable —
+       just here so the three new blocks can be evaluated in context.
+       Real nav/footer already exist in the WordPress theme.
+       ================================================================= */
+    :root {
+      --pv-ink-900: #0a1838;
+      --pv-ink-700: #2f3e5e;
+      --pv-ink-500: #4a5878;
+      --pv-ink-400: #6b7796;
+      --pv-ink-100: #e2e7f0;
+      --pv-ink-050: #f2f5fa;
+      --pv-blue-500: #3472f4;
+      --pv-blue-600: #2a5ce6;
+      --pv-cyan-500: #00dcc3;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: var(--pv-ink-900);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ---- Preview banner ---- */
+    .pv-banner {
+      position: fixed;
+      left: 14px;
+      bottom: 14px;
+      z-index: 1000;
+      padding: 8px 14px 8px 12px;
+      background: rgba(10, 24, 56, 0.92);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.92);
+      font: 600 11px/1.2 'Plus Jakarta Sans', system-ui, sans-serif;
+      letter-spacing: 0.04em;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(10, 24, 56, 0.18);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .pv-banner::before {
+      content: "";
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--pv-cyan-500);
+      box-shadow: 0 0 0 4px rgba(0, 220, 195, 0.20);
+    }
+
+    /* ---- Nav (matches live penlink.com chrome) ---- */
+    .pv-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background 200ms ease, border-color 200ms ease;
+    }
+    .pv-nav.is-scrolled {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom-color: var(--pv-ink-100);
+    }
+    .pv-nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .pv-nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+      flex: none;
+    }
+    .pv-nav-logo img { height: 32px; width: auto; }
+    .pv-nav-logo .word {
+      font: 700 22px/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.02em;
+      color: #fff;
+      transition: color 200ms ease;
+    }
+    .pv-nav.is-scrolled .pv-nav-logo .word { color: var(--pv-ink-900); }
+
+    .pv-nav-links {
+      display: flex; gap: 26px; flex: 1;
+    }
+    .pv-nav-link {
+      font: 500 14px/1 'Plus Jakarta Sans', sans-serif;
+      color: rgba(255, 255, 255, 0.88);
+      background: transparent;
+      border: 0;
+      padding: 8px 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 200ms ease;
+    }
+    .pv-nav.is-scrolled .pv-nav-link { color: var(--pv-ink-700); }
+    .pv-nav-link:hover { color: var(--pv-cyan-500); }
+    .pv-nav.is-scrolled .pv-nav-link:hover { color: var(--pv-blue-600); }
+    .pv-nav-link .caret { font-size: 9px; opacity: 0.6; }
+
+    .pv-nav-langs {
+      display: flex; gap: 6px;
+      font: 500 11px/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .pv-nav.is-scrolled .pv-nav-langs { color: var(--pv-ink-400); }
+    .pv-nav-langs a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .pv-nav-langs a.is-active { color: #fff; font-weight: 600; }
+    .pv-nav.is-scrolled .pv-nav-langs a.is-active { color: var(--pv-ink-900); }
+
+    .pv-nav-actions {
+      display: flex; gap: 10px; align-items: center;
+    }
+    .pv-nav-login {
+      font: 500 13px/1 'Plus Jakarta Sans', sans-serif;
+      color: rgba(255, 255, 255, 0.88);
+      background: transparent;
+      border: 0;
+      padding: 8px 4px;
+      cursor: pointer;
+      transition: color 200ms ease;
+    }
+    .pv-nav.is-scrolled .pv-nav-login { color: var(--pv-ink-700); }
+    .pv-nav-cta {
+      padding: 8px 16px;
+      border-radius: 10px;
+      background: linear-gradient(95deg, #3472f4, #00dcc3);
+      color: #fff;
+      font: 600 13px/1 'Plus Jakarta Sans', sans-serif;
+      text-decoration: none;
+      transition: filter 200ms ease;
+    }
+    .pv-nav-cta:hover { filter: brightness(0.95); }
+
+    /* ---- Footer (matches live penlink.com) ---- */
+    .pv-footer {
+      background: var(--pv-ink-900);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 80px 0 32px;
+    }
+    .pv-footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .pv-footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .pv-footer-brand .logo {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .pv-footer-brand .logo img { height: 32px; }
+    .pv-footer-brand .logo .word {
+      font: 700 22px/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .pv-footer-brand p {
+      font: 400 14px/1.6 'Plus Jakarta Sans', sans-serif;
+      max-width: 280px;
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+    .pv-footer-brand .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px;
+      background: linear-gradient(95deg, #3472f4, #00dcc3);
+      color: #fff;
+      font: 600 13px/1 'Plus Jakarta Sans', sans-serif;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+    .pv-footer h5 {
+      font: 600 12px/1 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #fff;
+      margin: 0 0 16px;
+    }
+    .pv-footer ul {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .pv-footer ul a {
+      font: 400 14px/1 'Plus Jakarta Sans', sans-serif;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 150ms ease;
+    }
+    .pv-footer ul a:hover { color: #fff; }
+    .pv-footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font: 400 12px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: rgba(255, 255, 255, 0.5);
+      flex-wrap: wrap;
+    }
+    .pv-footer-bottom .legal {
+      display: flex; gap: 20px;
+    }
+    .pv-footer-bottom a { text-decoration: none; color: inherit; }
+    .pv-footer-bottom a:hover { color: #fff; }
+
+    /* ---- Stub strip between hero and CoAnalyst, for context ---- */
+    .pv-stub-strip {
+      background: #fff;
+      border-bottom: 1px solid var(--pv-ink-100);
+      padding: 28px 0;
+    }
+    .pv-stub-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .pv-stub-item {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .pv-stub-icon {
+      width: 44px; height: 44px;
+      display: grid; place-items: center;
+      flex: none;
+    }
+    .pv-stub-icon img { width: 100%; height: 100%; }
+    .pv-stub-num {
+      font: 600 22px/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.02em;
+      color: var(--pv-ink-900);
+    }
+    .pv-stub-label {
+      font: 400 12px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: var(--pv-ink-500);
+      margin-top: 4px;
+    }
+
+    /* Connector — existing-section placeholders rendered as dotted blocks
+       so the user sees where the new sections slot in. */
+    .pv-section-placeholder {
+      padding: 80px 0;
+      text-align: center;
+      background: #fff;
+    }
+    .pv-section-placeholder .inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 64px 32px;
+      border: 1.5px dashed var(--pv-ink-100);
+      border-radius: 24px;
+      background: var(--pv-ink-050);
+    }
+    .pv-section-placeholder h3 {
+      font: 600 14px/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pv-ink-400);
+      margin: 0 0 8px;
+    }
+    .pv-section-placeholder p {
+      font: 500 18px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: var(--pv-ink-500);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+    .pv-section-placeholder small {
+      display: block;
+      margin-top: 12px;
+      font: 400 12px/1.4 'JetBrains Mono', ui-monospace, monospace;
+      color: var(--pv-ink-400);
+    }
+
+    /* ---- Preview-only: mission background swatch picker ---- */
+    .plhp-mission[data-bg="cream"]      .plhp-mission__card { background: #fbf9f4; border-color: #ece6d6; }
+    .plhp-mission[data-bg="gray"]       .plhp-mission__card { background: #f2f5fa; border-color: #e2e7f0; }
+    .plhp-mission[data-bg="blue"]       .plhp-mission__card { background: #eef4ff; border-color: #dbe6ff; }
+    .plhp-mission[data-bg="lime"]       .plhp-mission__card { background: #f5fbe6; border-color: #e6f3c2; }
+    .plhp-mission[data-bg="cyan-mint"]  .plhp-mission__card { background: #ecfbf7; border-color: #d4f8f2; }
+    .plhp-mission[data-bg="white"]      .plhp-mission__card { background: #ffffff; border-color: #e2e7f0; box-shadow: 0 12px 32px rgba(10,24,56,0.06); }
+    /* On non-cream variants, the inner cards need a touch more contrast */
+    .plhp-mission[data-bg="white"]      .plhp-mission__pillar,
+    .plhp-mission[data-bg="white"]      .plhp-mission__impact { background: #f8fafd; }
+
+    .pv-bg-picker {
+      position: sticky;
+      top: 88px;
+      z-index: 50;
+      margin: 0 auto;
+      max-width: 1240px;
+      padding: 0 32px;
+      pointer-events: none;
+    }
+    .pv-bg-picker__inner {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px 8px 14px;
+      background: rgba(10, 24, 56, 0.92);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      box-shadow: 0 12px 32px rgba(10, 24, 56, 0.18);
+      font: 600 10.5px/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .pv-bg-picker__label { padding-right: 4px; border-right: 1px solid rgba(255,255,255,0.18); }
+    .pv-bg-picker__swatches { display: inline-flex; gap: 4px; }
+    .pv-bg-picker__swatch {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      padding: 0;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+      transition: transform 150ms ease, border-color 150ms ease;
+    }
+    .pv-bg-picker__swatch:hover { transform: scale(1.08); }
+    .pv-bg-picker__swatch[aria-pressed="true"] {
+      border-color: #00dcc3;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12), 0 0 0 3px rgba(0,220,195,0.18);
+    }
+    .pv-bg-picker__name {
+      margin-left: 6px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(255,255,255,0.18);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      font-size: 12px;
+      min-width: 72px;
+    }
+
+    @media (max-width: 1100px) {
+      .pv-nav-links, .pv-nav-langs { display: none; }
+      .pv-stub-inner { grid-template-columns: repeat(2, 1fr); }
+      .pv-footer-grid { grid-template-columns: 1fr 1fr; }
+      .pv-bg-picker { top: 80px; padding: 0 20px; }
+    }
+    @media (max-width: 720px) {
+      .pv-nav-inner { padding: 0 20px; }
+      .pv-nav-actions .pv-nav-login { display: none; }
+      .pv-stub-inner { grid-template-columns: 1fr 1fr; gap: 20px; padding: 0 20px; }
+      .pv-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .pv-footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body data-screen-label="Homepage Preview">
+
+  <!-- =================================================================
+       NAV — existing penlink.com chrome (preview-only)
+       ================================================================= -->
+  <header class="pv-nav" id="pv-nav" data-screen-label="Nav (existing)">
+    <div class="pv-nav-inner">
+      <a class="pv-nav-logo" href="#">
+        <img src="1d47e1bd-83e3-4c40-b6f3-b12c722f67a7" alt="Penlink" data-pv-logo="">
+        <span class="word">penlink</span>
+      </a>
+      <nav class="pv-nav-links">
+        <button class="pv-nav-link" type="button">Why Penlink <span class="caret">▾</span></button>
+        <button class="pv-nav-link" type="button">Platform <span class="caret">▾</span></button>
+        <button class="pv-nav-link" type="button">Solutions <span class="caret">▾</span></button>
+        <button class="pv-nav-link" type="button">Resources <span class="caret">▾</span></button>
+        <button class="pv-nav-link" type="button">Training <span class="caret">▾</span></button>
+        <button class="pv-nav-link" type="button">Company <span class="caret">▾</span></button>
+      </nav>
+      <div class="pv-nav-langs">
+        <a href="#" class="is-active">EN</a><span>·</span>
+        <a href="#">ES</a>
+        <a href="#">PT</a>
+        <a href="#">FR</a>
+        <a href="#">DE</a>
+      </div>
+      <div class="pv-nav-actions">
+        <button class="pv-nav-login" type="button">Login</button>
+        <a class="pv-nav-cta" href="#">Get a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       NEW: HERO  (new block — see partials/01-hero.html)
+       ================================================================= -->
+  <section class="plhp-block plhp-hero" data-screen-label="01 Hero (NEW)" aria-labelledby="plhp-hero-heading">
+    <!-- Preview note: video <source> intentionally omitted so the page works
+         offline. The CSS-animated gradient fallback below is on-brand and
+         demonstrates the same scrim / overlay treatment. The dev plugs the
+         real /wp-content/uploads/penlink-hero-loop.mp4 into partials/01-hero.html. -->
+    <div class="plhp-hero__video-fallback" aria-hidden="true"></div>
+    <div class="plhp-hero__scrim" aria-hidden="true"></div>
+    <div class="plhp-hero__rail" aria-hidden="true"></div>
+
+    <span class="plhp-hero__live" aria-hidden="true">CoAnalyst 360 · Live</span>
+
+    <div class="plhp-container">
+      <div class="plhp-hero__grid">
+        <div class="plhp-hero__copy">
+          <span class="plhp-hero__tag">
+            <span class="plhp-hero__tag-pip">New</span>
+            <span>Introducing CoAnalyst 360 · Agentic AI for Investigations</span>
+          </span>
+          <h1 id="plhp-hero-heading">
+            Safeguarding communities, nations and <span class="plhp-accent">enterprises.</span>
+          </h1>
+          <p class="plhp-hero__lead">
+            Penlink is the global leader in digital intelligence. Our compliant,
+            certified platform integrates digital evidence, open-source intelligence
+            and live communications — now extended by an agentic AI partner that
+            drives investigations forward.
+          </p>
+          <div class="plhp-hero__actions">
+            <a href="#" class="plhp-btn plhp-btn--primary">
+              Get a Demo <span class="plhp-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#coanalyst-360" class="plhp-hero__play">
+              <span class="plhp-hero__play-icon" aria-hidden="true">▶</span>
+              <span>Experience Co360</span>
+              <span class="plhp-hero__play-meta">NEW</span>
+            </a>
+          </div>
+          <div class="plhp-hero__trust">
+            <span><strong>Trusted by 1,000+</strong> agencies</span>
+            <span class="plhp-hero__trust-dot" aria-hidden="true"></span>
+            <span><strong>35+ years</strong> of mission impact</span>
+            <span class="plhp-hero__trust-dot" aria-hidden="true"></span>
+            <span><strong>SOC 2 · FedRAMP</strong> ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="plhp-hero__card" aria-label="CoAnalyst 360 active workflow">
+      <div class="plhp-hero__card-head">
+        <div class="plhp-hero__card-avatar" aria-hidden="true">CA</div>
+        <div>
+          <div class="plhp-hero__card-label">Active Workflow</div>
+          <div class="plhp-hero__card-title">Cross-reference subjects across PLX, Tangles &amp; CDR</div>
+        </div>
+      </div>
+      <div class="plhp-hero__card-grid">
+        <div>
+          <div class="k">Sources Coordinated</div>
+          <div class="v">7 agents</div>
+        </div>
+        <div>
+          <div class="k">Time to Insight</div>
+          <div class="v">2m 14s</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- =================================================================
+       EXISTING (placeholder): Stat strip from current homepage
+       ================================================================= -->
+  <section class="pv-stub-strip" data-screen-label="Stat strip (existing)">
+    <div class="pv-stub-inner">
+      <div class="pv-stub-item">
+        <div class="pv-stub-icon"><img src="10742e09-a1fd-4cb6-bec6-223a52b86d2e" alt=""></div>
+        <div>
+          <div class="pv-stub-num">35+</div>
+          <div class="pv-stub-label">Years track record as industry leader</div>
+        </div>
+      </div>
+      <div class="pv-stub-item">
+        <div class="pv-stub-icon"><img src="6fb2cc44-4ef4-4fa7-bc5e-613772c832fb" alt=""></div>
+        <div>
+          <div class="pv-stub-num">1,000+</div>
+          <div class="pv-stub-label">Organizations empowering security</div>
+        </div>
+      </div>
+      <div class="pv-stub-item">
+        <div class="pv-stub-icon"><img src="a77e5c7b-0989-46fb-8728-07d91bc817a0" alt=""></div>
+        <div>
+          <div class="pv-stub-num">1,000s</div>
+          <div class="pv-stub-label">Of accelerated case resolutions</div>
+        </div>
+      </div>
+      <div class="pv-stub-item">
+        <div class="pv-stub-icon"><img src="3cc90f70-6d2a-4695-a571-93ec10113982" alt=""></div>
+        <div>
+          <div class="pv-stub-num">1M+</div>
+          <div class="pv-stub-label">Of records processed daily</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       NEW: COANALYST 360  (new block — see partials/02-coanalyst-360.html)
+       ================================================================= -->
+  <section id="coanalyst-360" class="plhp-block plhp-co360" data-screen-label="02 CoAnalyst 360 (NEW)" aria-labelledby="plhp-co360-heading">
+    <div class="plhp-container">
+      <div class="plhp-co360__grid">
+        <div>
+          <span class="plhp-co360__tag">
+            <span class="plhp-co360__tag-pip">New</span>
+            <span>Penlink AI · Agentic Framework</span>
+          </span>
+          <h2 id="plhp-co360-heading">
+            Meet <span class="plhp-accent">CoAnalyst 360.</span><br>
+            AI that drives investigations forward.
+          </h2>
+          <p class="plhp-co360__lead">A persistent, multi-agent system built into the fabric of the Penlink platform. CoAnalyst 360 understands investigative intent, orchestrates workflows across open-source intel, evidentiary data, and live communications, and maintains context from first query to final outcome.&nbsp;</p>
+
+          <ul class="plhp-co360__bullets">
+            <li>
+              <span class="plhp-check" aria-hidden="true">✓</span>
+              <span>
+                <strong>Persistent context</strong> — maintain a single thread of
+                analysis across the full case lifecycle, without manual re-connection.
+              </span>
+            </li>
+            <li>
+              <span class="plhp-check" aria-hidden="true">✓</span>
+              <span>
+                <strong>Multi-agent orchestration</strong> — coordinated discovery,
+                analysis and follow-up across PLX, Tangles and GeoTime in a single
+                workflow.
+              </span>
+            </li>
+            <li>
+              <span class="plhp-check" aria-hidden="true">✓</span>
+              <span>
+                <strong>Predictive intelligence</strong> — surface anomalies and
+                anticipate emerging risks to move from reactive to intelligence-led
+                operations.
+              </span>
+            </li>
+          </ul>
+
+          <div class="plhp-co360__actions">
+            <a href="#" class="plhp-btn plhp-btn--primary">Request the Demo
+→</a>
+            <a href="#" class="plhp-btn plhp-btn--secondary">
+              <span class="plhp-btn__play" aria-hidden="true">
+                <svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9" fill="currentColor"></polygon></svg>
+              </span>
+              Experience Co360
+            </a>
+          </div>
+        </div>
+
+        <div class="plhp-co360__anim">
+          <div class="plhp-co360__anim-frame" role="img" aria-label="CoAnalyst 360 working through an investigation across PLX, Tangles, GeoTime and live communications">
+            <div class="plhp-co360__anim-head">
+              <div class="plhp-co360__anim-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="plhp-co360__anim-title">coanalyst-360 · case PLX-48219</div>
+              <div class="plhp-co360__anim-status">7 agents active</div>
+            </div>
+            <div class="plhp-co360__anim-body" data-plhp-anim-body=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       EXISTING (placeholder): rest of homepage sections
+       ================================================================= -->
+  <section class="pv-section-placeholder" data-screen-label="Rest of homepage (existing)">
+    <div class="inner">
+      <h3>Existing homepage continues here</h3>
+      <p>Pillar grid · Solutions · Differentiators · Press · Etc.</p>
+      <small>No changes to these sections in this update</small>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       NEW: MISSION  (new block — see partials/03-mission.html)
+       ================================================================= -->
+  <div class="pv-bg-picker" id="pv-bg-picker" role="toolbar" aria-label="Mission background swatches (preview only)">
+    <div class="pv-bg-picker__inner">
+      <span class="pv-bg-picker__label">Mission bg</span>
+      <div class="pv-bg-picker__swatches">
+        <button class="pv-bg-picker__swatch" data-bg="cream" aria-pressed="true" style="background:#fbf9f4" title="Warm paper"></button>
+        <button class="pv-bg-picker__swatch" data-bg="gray" aria-pressed="false" style="background:#f2f5fa" title="Light gray"></button>
+        <button class="pv-bg-picker__swatch" data-bg="blue" aria-pressed="false" style="background:#eef4ff" title="Pale blue"></button>
+        <button class="pv-bg-picker__swatch" data-bg="lime" aria-pressed="false" style="background:#f5fbe6" title="Pale lime"></button>
+        <button class="pv-bg-picker__swatch" data-bg="cyan-mint" aria-pressed="false" style="background:#ecfbf7" title="Cyan mint"></button>
+        <button class="pv-bg-picker__swatch" data-bg="white" aria-pressed="false" style="background:#ffffff" title="Pure white"></button>
+      </div>
+      <span class="pv-bg-picker__name" id="pv-bg-name">Warm paper</span>
+    </div>
+  </div>
+
+  <section class="plhp-block plhp-mission" data-bg="cream" data-screen-label="03 Mission (NEW)" aria-labelledby="plhp-mission-heading">
+    <div class="plhp-container">
+      <div class="plhp-mission__card">
+        <div class="plhp-mission__grid">
+          <div class="plhp-mission__lead">
+            <span class="plhp-eyebrow">Our Mission · A Message From Our CEO</span>
+            <h2 id="plhp-mission-heading">
+              Penlink is <span class="plhp-accent">built for this mission.</span>
+            </h2>
+            <p class="plhp-mission__lead-body">
+              For nearly forty years, we have worked alongside law enforcement,
+              national security, and corporate safety professionals to help keep
+              communities safe. This work is often urgent — locating missing and
+              exploited children, disrupting human-trafficking networks, combating
+              drug distribution, and identifying credible threats before they
+              escalate.
+            </p>
+
+            <blockquote class="plhp-mission__quote">
+              <span class="plhp-mission__quote-mark" aria-hidden="true">“</span>
+              <p>
+                Strong privacy protections and lawful access to data must coexist.
+                Technology should be used responsibly, lawfully, and effectively —
+                and we operate accordingly.
+              </p>
+            </blockquote>
+
+            <div class="plhp-mission__author">
+              <div class="plhp-mission__avatar">
+                <img src="ca3c8c3a-6326-4956-a29d-be70aaef602f" alt="Peter Weber">
+              </div>
+              <div class="plhp-mission__author-who">
+                <div class="plhp-mission__author-name">Peter Weber</div>
+                <div class="plhp-mission__author-role">CEO, Penlink</div>
+              </div>
+              <a class="plhp-mission__read" href="https://www.penlink.com/blog/responsible-law-enforcement-technology/">
+                Read Peter's full letter <span class="plhp-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="plhp-mission__side" aria-label="How Penlink serves the mission">
+            <div class="plhp-mission__pillars">
+              <div class="plhp-mission__pillar">
+                <div class="plhp-mission__pillar-num">01</div>
+                <div>
+                  <h4>Protect</h4>
+                  <p>Locate missing and exploited children, intervene in the first 48 hours that determine outcomes.</p>
+                </div>
+              </div>
+              <div class="plhp-mission__pillar">
+                <div class="plhp-mission__pillar-num">02</div>
+                <div>
+                  <h4>Pursue</h4>
+                  <p>Disrupt human-trafficking and organized-crime networks operating across digital infrastructure.</p>
+                </div>
+              </div>
+              <div class="plhp-mission__pillar">
+                <div class="plhp-mission__pillar-num">03</div>
+                <div>
+                  <h4>Prevent</h4>
+                  <p>Identify credible threats to people and public spaces before they escalate into incidents.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="plhp-mission__impact">
+              <div class="plhp-mission__impact-cell">
+                <div class="plhp-mission__impact-num">1,000+</div>
+                <div class="plhp-mission__impact-label">Agencies &amp; organizations trust Penlink worldwide</div>
+              </div>
+              <div class="plhp-mission__impact-cell">
+                <div class="plhp-mission__impact-num">90%+</div>
+                <div class="plhp-mission__impact-label">Of criminal investigations involve digital evidence today</div>
+              </div>
+              <div class="plhp-mission__impact-cell">
+                <div class="plhp-mission__impact-num">35 yrs</div>
+                <div class="plhp-mission__impact-label">Of investigative software built in service of the mission</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="plhp-mission__foot">
+          <div class="plhp-mission__foot-copy">
+            <strong>Responsible innovation.</strong>
+            Compliant. Certified. Built in the United States in service of those
+            who protect and serve.
+          </div>
+          <div class="plhp-mission__foot-cta">
+            <a href="#" class="plhp-btn plhp-btn--primary">
+              Request a Demo <span class="plhp-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#" class="plhp-btn plhp-btn--secondary">Learn About Penlink</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       FOOTER — existing penlink.com chrome (preview-only)
+       ================================================================= -->
+  <footer class="pv-footer" data-screen-label="Footer (existing)">
+    <div class="pv-footer-inner">
+      <div class="pv-footer-grid">
+        <div class="pv-footer-brand">
+          <div class="logo">
+            <img src="1d47e1bd-83e3-4c40-b6f3-b12c722f67a7" alt="Penlink">
+            <span class="word">penlink</span>
+          </div>
+          <p>Trusted Innovation for Intelligent Decisions. Penlink integrates digital evidence and open-source intelligence into one platform.</p>
+          <a class="btn" href="#">Get a Demo →</a>
+        </div>
+        <div>
+          <h5>Platform</h5>
+          <ul>
+            <li><a href="#">Digital Evidence</a></li>
+            <li><a href="#">Open-Source Intelligence</a></li>
+            <li><a href="#">Data Analytics</a></li>
+            <li><a href="#">Live Communication</a></li>
+            <li><a href="#">CoAnalyst 360</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Solutions</h5>
+          <ul>
+            <li><a href="#">Law Enforcement</a></li>
+            <li><a href="#">National Security</a></li>
+            <li><a href="#">Government</a></li>
+            <li><a href="#">Defense</a></li>
+            <li><a href="#">Financial Services</a></li>
+            <li><a href="#">Enterprise</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Field Notes</a></li>
+            <li><a href="#">Training</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Penlink for Good</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pv-footer-bottom">
+        <div>All Rights Reserved Penlink 2026 © — 2311 Wilson Boulevard, 3rd Floor Arlington, VA 22201</div>
+        <div class="legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">GDPR</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="pv-banner" role="status" aria-live="polite">
+    PREVIEW · MAY 2026 HOMEPAGE UPDATE
+  </div>
+
+  <!-- Production JS (drives the CoAnalyst 360 placeholder animation) -->
+  <script defer="" src="70b2cd97-3339-4383-9e03-6cb1bd22fd36"></script>
+
+  <!-- Preview-only: swap the nav logo to color when scrolled past the hero -->
+  <script>
+    (function () {
+      var nav = document.getElementById('pv-nav');
+      var logo = document.querySelector('[data-pv-logo]');
+      var WHITE = (window.__resources && window.__resources.logoWhite) || 'assets/logo-mark-white.png';
+      var COLOR = (window.__resources && window.__resources.logoColor) || 'assets/logo-mark-color.png';
+
+      function onScroll() {
+        var scrolled = window.scrollY > 60;
+        nav.classList.toggle('is-scrolled', scrolled);
+        if (logo) logo.src = scrolled ? COLOR : WHITE;
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+  <!-- Preview-only: mission background swatch picker -->
+  <script>
+    (function () {
+      var NAMES = {
+        'cream':     'Warm paper',
+        'gray':      'Light gray',
+        'blue':      'Pale blue',
+        'lime':      'Pale lime',
+        'cyan-mint': 'Cyan mint',
+        'white':     'Pure white'
+      };
+      var mission = document.querySelector('.plhp-mission');
+      var picker  = document.getElementById('pv-bg-picker');
+      var nameEl  = document.getElementById('pv-bg-name');
+      if (!mission || !picker) return;
+
+      picker.addEventListener('click', function (e) {
+        var btn = e.target.closest('.pv-bg-picker__swatch');
+        if (!btn) return;
+        var bg = btn.getAttribute('data-bg');
+        mission.setAttribute('data-bg', bg);
+        picker.querySelectorAll('.pv-bg-picker__swatch').forEach(function (b) {
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        if (nameEl) nameEl.textContent = NAMES[bg] || bg;
+      });
+    })();
+  </script>
+
+
+</body></html>
