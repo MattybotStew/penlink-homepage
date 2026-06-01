@@ -92,21 +92,35 @@
       frame.appendChild(btn);
     }
 
-    // Pause animation when out of viewport (cheap perf win on a long page)
-    var self = this;
-    if ('IntersectionObserver' in window) {
-      this.io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting && !self.running && !self.cancelled) {
-            self.start();
-          }
-        });
-      }, { threshold: 0.25 });
-      this.io.observe(frame);
-    } else {
-      this.start();
-    }
+    // Render the completed state immediately so content is visible on load
+    this.renderFinal();
+
+    // After replay is clicked, restart uses the animated path (start/run)
   }
+
+  // Render the fully-completed conversation state with no delays
+  CoAnalystAnim.prototype.renderFinal = function () {
+    var self = this;
+    self.body.innerHTML = '';
+    STEPS.forEach(function (step) {
+      if (step.kind !== 'msg') return;
+      var wrap = el('div', 'plhp-msg plhp-msg--' + step.role);
+      var who  = el('div', 'plhp-msg__who', step.role === 'user' ? 'L' : 'C');
+      var bod  = el('div', 'plhp-msg__body');
+      if (step.role === 'user') {
+        bod.textContent = step.text;
+      } else {
+        bod.innerHTML = step.html;
+        $$('[data-tool], [data-chip]', bod).forEach(function (item) {
+          item.classList.add('is-in');
+        });
+      }
+      wrap.appendChild(who);
+      wrap.appendChild(bod);
+      wrap.classList.add('is-in');
+      self.body.appendChild(wrap);
+    });
+  };
 
   CoAnalystAnim.prototype.cancelAll = function () {
     this.cancelled = true;
