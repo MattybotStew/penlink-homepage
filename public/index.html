@@ -1163,7 +1163,7 @@
    ===================================================================== */
 .plhp-mission {
   background: var(--c-paper);
-  padding: 80px 0 120px;
+  padding: 0 0 120px;
   position: relative;
 }
 
@@ -1409,49 +1409,455 @@
 }
 
 /* =====================================================================
-   RESPONSIVE
+   4. POWER CAROUSEL — "The Power of Digital Intelligence in One Platform"
+   Dark world, coverflow carousel with 6 solution verticals.
    ===================================================================== */
-@media (max-width: 1100px) {
-  .plhp-hero {
-    padding: 120px 0 100px;
-    min-height: 640px;
-  }
-  .plhp-hero__live,
-  .plhp-hero__card {
-    display: none;
-  }
-  .plhp-co360 { padding: 80px 0; }
-  .plhp-co360__grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-  .plhp-mission { padding: 60px 0 80px; }
-  .plhp-mission__card { padding: 48px; }
-  .plhp-mission__grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .plhp-mission__foot {
-    grid-template-columns: 1fr;
-  }
+
+.plhp-carousel {
+  position: relative;
+  overflow: hidden;
+  background: #04102a;
+  padding: 120px 0;
+}
+.plhp-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 75% 50%, rgba(52,114,244,0.10) 0%, transparent 70%),
+              radial-gradient(ellipse 60% 60% at 25% 50%, rgba(0,220,195,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.plhp-carousel__header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 44px;
+}
+.plhp-carousel__header h2 {
+  font: 700 clamp(32px,3.5vw,52px)/1.1 var(--font-display);
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0 0 18px;
+}
+.plhp-carousel__header h2 .plhp-accent {
+  background: var(--grad-cyan-lime);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.plhp-carousel__header p {
+  font: 400 clamp(16px,1.2vw,18px)/1.55 var(--font-sans);
+  color: rgba(255,255,255,0.75);
+  margin: 0 auto;
+  max-width: 760px;
+}
+.plhp-carousel__stage {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+.plhp-carousel__deco-a {
+  position: absolute;
+  top: 18px; left: calc(50% + 60px);
+  width: 220px; height: 150px;
+  background: linear-gradient(135deg, #00dcc3, #0bb6d6);
+  border-radius: 4px 4px 28px 4px;
+  filter: blur(2px);
+  opacity: 0.9;
+  z-index: 1;
+  pointer-events: none;
+}
+.plhp-carousel__deco-b {
+  position: absolute;
+  bottom: 8px; left: calc(50% - 440px);
+  width: 170px; height: 140px;
+  background: linear-gradient(135deg, #3472f4, #daf355);
+  border-radius: 4px 4px 4px 28px;
+  filter: blur(2px);
+  opacity: 0.85;
+  z-index: 1;
+  pointer-events: none;
+}
+.plhp-carousel__track-outer {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.plhp-carousel__track {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.plhp-sol-card {
+  position: relative;
+  width: 560px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #06122f;
+  height: 312px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  transform: scale(0.94);
+  opacity: 0.42;
+  transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease,
+              box-shadow 0.5s ease, border-color 0.5s ease;
+  cursor: pointer;
+}
+.plhp-sol-card.is-active {
+  height: 360px;
+  transform: scale(1);
+  opacity: 1;
+  border-color: rgba(0,220,195,0.5);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.55), 0 0 60px rgba(0,220,195,0.18);
+  cursor: default;
+}
+.plhp-sol-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4,16,42,0.55) 0%, rgba(4,16,42,0.30) 40%, rgba(4,16,42,0.88) 100%);
+}
+.plhp-sol-card__body {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 36px;
+}
+.plhp-sol-card__body h3 {
+  font: 700 26px/1.2 var(--font-display);
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 12px;
+}
+.plhp-sol-card__body p {
+  font: 400 16px/1.5 var(--font-sans);
+  color: rgba(255,255,255,0.82);
+  margin: 0 0 18px;
+  max-width: 420px;
+}
+.plhp-sol-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #daf355;
+  font: 700 14.5px/1 var(--font-sans);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: gap 0.2s ease;
+}
+.plhp-sol-card__cta:hover { gap: 8px; }
+.plhp-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease;
+}
+.plhp-carousel__arrow:hover { background: rgba(255,255,255,0.12); }
+.plhp-carousel__arrow--prev { left: -8px; }
+.plhp-carousel__arrow--next { right: -8px; }
+.plhp-carousel__arrow svg { width: 20px; height: 20px; display: block; }
+.plhp-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+.plhp-carousel__dot {
+  height: 9px;
+  width: 9px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: rgba(255,255,255,0.3);
+  transition: width 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.plhp-carousel__dot.is-active {
+  width: 30px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.4);
 }
 
+/* =====================================================================
+   5. WHAT SETS APART — 3-column feature cards on white
+   ===================================================================== */
+
+.plhp-features {
+  background: #fff;
+  padding: 120px 0;
+}
+.plhp-features__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+.plhp-features__eyebrow {
+  display: block;
+  font: 600 11px/1 var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-cyan-500);
+  margin-bottom: 14px;
+}
+.plhp-features__header h2 {
+  font: 700 clamp(32px,3.5vw,52px)/1.1 var(--font-display);
+  letter-spacing: -0.025em;
+  color: var(--c-ink-900);
+  margin: 0 0 18px;
+}
+.plhp-features__header h2 .plhp-accent {
+  background: var(--grad-blue-cyan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.plhp-features__header p {
+  font: 400 clamp(16px,1.2vw,18px)/1.55 var(--font-sans);
+  color: var(--c-ink-500);
+  margin: 0 auto;
+}
+.plhp-features__grid {
+  display: flex;
+  gap: 28px;
+  align-items: stretch;
+}
+.plhp-feat-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid var(--c-ink-100);
+  border-radius: var(--r-2xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.plhp-feat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+.plhp-feat-card__icon {
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+.plhp-feat-card__icon--grad {
+  background: linear-gradient(135deg, #00dcc3 0%, #daf355 100%);
+  box-shadow: 0 8px 22px rgba(0,220,195,0.3);
+}
+.plhp-feat-card__icon--blue {
+  background: rgba(52,114,244,0.1);
+  border: 1px solid rgba(52,114,244,0.25);
+}
+.plhp-feat-card__icon svg { width: 28px; height: 28px; display: block; flex-shrink: 0; }
+.plhp-feat-card__icon--grad svg { color: #04102a; }
+.plhp-feat-card__icon--blue svg { color: var(--c-blue-500); }
+.plhp-feat-card h3 {
+  font: 700 22px/1.2 var(--font-display);
+  letter-spacing: -0.015em;
+  color: var(--c-ink-900);
+  margin: 0 0 12px;
+}
+.plhp-feat-card > p {
+  font: 400 16px/1.55 var(--font-sans);
+  color: var(--c-ink-500);
+  margin: 0 0 26px;
+  flex: 1;
+}
+.plhp-btn--lime {
+  background: #daf355;
+  color: #04102a;
+  border-color: transparent;
+}
+.plhp-btn--lime:hover {
+  background: #c8e040;
+  color: #04102a;
+}
+
+/* =====================================================================
+   6. COMPLIANT — "Compliant and Certified" trust band. Dark world.
+   ===================================================================== */
+
+.plhp-certs {
+  position: relative;
+  overflow: hidden;
+  background: #04102a;
+  padding: 120px 0;
+}
+.plhp-certs::before,
+.plhp-certs::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.plhp-certs::before {
+  background: radial-gradient(ellipse 70% 70% at 70% 50%, rgba(52,114,244,0.09) 0%, transparent 70%);
+}
+.plhp-certs::after {
+  background: radial-gradient(ellipse 60% 60% at 30% 50%, rgba(0,220,195,0.07) 0%, transparent 70%);
+}
+.plhp-certs__header {
+  position: relative;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px;
+}
+.plhp-certs__header h2 {
+  font: 700 clamp(32px,3.5vw,52px)/1.1 var(--font-display);
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0 0 16px;
+}
+.plhp-certs__header h2 .plhp-accent {
+  background: var(--grad-cyan-lime);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.plhp-certs__header p {
+  font: 400 clamp(16px,1.2vw,18px)/1.55 var(--font-sans);
+  color: rgba(255,255,255,0.75);
+  margin: 0 auto;
+}
+.plhp-certs__badges {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.plhp-cert-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 104px;
+}
+.plhp-cert-item__ring {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  padding: 3px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 0 18px rgba(0,220,195,0.08);
+  display: grid;
+  place-items: center;
+}
+.plhp-cert-item__inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  display: grid;
+  place-items: center;
+  font: 700 9.5px/1.3 var(--font-mono);
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px;
+}
+.plhp-cert-item__label {
+  font: 600 10.5px/1.3 var(--font-sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+}
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+
+/* ---- Tablet (≤ 1100px) ---- */
+@media (max-width: 1100px) {
+  /* Section spacing */
+  .plhp-hero     { padding: 120px 0 100px; min-height: 640px; }
+  .plhp-co360    { padding: 80px 0; }
+  .plhp-carousel { padding: 80px 0; }
+  .plhp-features { padding: 80px 0; }
+  .plhp-certs    { padding: 80px 0; }
+  .plhp-mission  { padding: 0 0 80px; }
+
+  /* Hero */
+  .plhp-hero__live,
+  .plhp-hero__card { display: none; }
+
+  /* CoAnalyst 360 */
+  .plhp-co360__grid { grid-template-columns: 1fr; gap: 56px; }
+
+  /* Mission */
+  .plhp-mission__card { padding: 48px; }
+  .plhp-mission__grid { grid-template-columns: 1fr; gap: 48px; }
+  .plhp-mission__foot { grid-template-columns: 1fr; }
+}
+
+/* ---- Mobile (≤ 720px) ---- */
 @media (max-width: 720px) {
+  /* Section spacing */
   .plhp-container { padding: 0 20px; }
-  .plhp-hero {
-    padding: 100px 0 80px;
-    min-height: 560px;
-  }
-  .plhp-hero__lead { font-size: 16px; }
+  .plhp-hero     { padding: 100px 0 80px; min-height: 560px; }
+  .plhp-co360    { padding: 64px 0; }
+  .plhp-carousel { padding: 64px 0; }
+  .plhp-features { padding: 64px 0; }
+  .plhp-certs    { padding: 64px 0; }
+  .plhp-mission  { padding: 0 0 64px; }
+
+  /* Hero */
+  .plhp-hero__lead    { font-size: 16px; }
   .plhp-hero__actions { gap: 10px; }
-  .plhp-hero__trust { gap: 12px; font-size: 13px; }
-  .plhp-co360 { padding: 64px 0; }
+  .plhp-hero__trust   { gap: 12px; font-size: 13px; }
+
+  /* CoAnalyst 360 */
   .plhp-co360__anim-frame { padding: 18px; }
-  .plhp-mission { padding: 48px 0 64px; }
-  .plhp-mission__card { padding: 32px 24px; border-radius: var(--r-xl); }
-  .plhp-mission__quote { padding: 24px 20px 24px 48px; }
-  .plhp-mission__impact { grid-template-columns: 1fr; gap: 18px; }
-  .plhp-mission__foot-cta { flex-direction: column; align-items: stretch; }
+
+  /* Carousel */
+  .plhp-carousel__stage { height: 340px; }
+  .plhp-carousel__deco-a,
+  .plhp-carousel__deco-b { display: none; }
+  .plhp-sol-card              { width: 300px; }
+  .plhp-sol-card.is-active    { height: 300px; }
+  .plhp-sol-card__body        { padding: 24px; }
+  .plhp-sol-card__body h3     { font-size: 20px; }
+  .plhp-sol-card__body p      { font-size: 14px; }
+
+  /* Features */
+  .plhp-features__grid { flex-direction: column; }
+
+  /* Certs */
+  .plhp-certs__badges   { gap: 20px; }
+  .plhp-cert-item       { width: 82px; }
+  .plhp-cert-item__ring { width: 70px; height: 70px; }
+
+  /* Mission */
+  .plhp-mission__card             { padding: 32px 24px; border-radius: var(--r-xl); }
+  .plhp-mission__quote            { padding: 24px 20px 24px 48px; }
+  .plhp-mission__impact           { grid-template-columns: 1fr; gap: 18px; }
+  .plhp-mission__foot-cta         { flex-direction: column; align-items: stretch; }
   .plhp-mission__foot-cta .plhp-btn { justify-content: center; }
 }
 </style>
@@ -1766,63 +2172,12 @@
     .plhp-mission[data-bg="white"]      .plhp-mission__pillar,
     .plhp-mission[data-bg="white"]      .plhp-mission__impact { background: #f8fafd; }
 
-    .pv-bg-picker {
-      position: sticky;
-      top: 88px;
-      z-index: 50;
-      margin: 0 auto;
-      max-width: 1240px;
-      padding: 0 32px;
-      pointer-events: none;
-    }
-    .pv-bg-picker__inner {
-      pointer-events: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 10px 8px 14px;
-      background: rgba(10, 24, 56, 0.92);
-      backdrop-filter: blur(10px);
-      border-radius: 999px;
-      box-shadow: 0 12px 32px rgba(10, 24, 56, 0.18);
-      font: 600 10.5px/1 'Plus Jakarta Sans', sans-serif;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-    }
-    .pv-bg-picker__label { padding-right: 4px; border-right: 1px solid rgba(255,255,255,0.18); }
-    .pv-bg-picker__swatches { display: inline-flex; gap: 4px; }
-    .pv-bg-picker__swatch {
-      width: 26px; height: 26px;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      cursor: pointer;
-      padding: 0;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
-      transition: transform 150ms ease, border-color 150ms ease;
-    }
-    .pv-bg-picker__swatch:hover { transform: scale(1.08); }
-    .pv-bg-picker__swatch[aria-pressed="true"] {
-      border-color: #00dcc3;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12), 0 0 0 3px rgba(0,220,195,0.18);
-    }
-    .pv-bg-picker__name {
-      margin-left: 6px;
-      padding-left: 10px;
-      border-left: 1px solid rgba(255,255,255,0.18);
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.04em;
-      text-transform: none;
-      font-size: 12px;
-      min-width: 72px;
-    }
 
     @media (max-width: 1100px) {
       .pv-nav-links, .pv-nav-langs { display: none; }
       .pv-stub-inner { grid-template-columns: repeat(2, 1fr); }
       .pv-footer-grid { grid-template-columns: 1fr 1fr; }
-      .pv-bg-picker { top: 80px; padding: 0 20px; }
+
     }
     @media (max-width: 720px) {
       .pv-nav-inner { padding: 0 20px; }
@@ -2046,33 +2401,143 @@
   </section>
 
   <!-- =================================================================
-       EXISTING (placeholder): rest of homepage sections
+       NEW: POWER CAROUSEL — "The Power of Digital Intelligence in One Platform"
        ================================================================= -->
-  <section class="pv-section-placeholder" data-screen-label="Rest of homepage (existing)">
-    <div class="inner">
-      <h3>Existing homepage continues here</h3>
-      <p>Pillar grid · Solutions · Differentiators · Press · Etc.</p>
-      <small>No changes to these sections in this update</small>
+  <section class="plhp-block plhp-carousel" data-screen-label="Power of Digital Intelligence (NEW)" aria-labelledby="plhp-carousel-heading">
+    <div class="plhp-container" style="position:relative">
+      <div class="plhp-carousel__header">
+        <h2 id="plhp-carousel-heading">
+          The power of digital intelligence in
+          <span class="plhp-accent">one platform</span>
+        </h2>
+        <p>Penlink's data analysis software integrates intelligence gathering, evidence management, and AI-powered analytics into a unified solution. We believe in the power of data-driven intelligence to accelerate clarity for your most critical missions.</p>
+      </div>
+
+      <div class="plhp-carousel__stage">
+        <div class="plhp-carousel__deco-a" aria-hidden="true"></div>
+        <div class="plhp-carousel__deco-b" aria-hidden="true"></div>
+
+        <div class="plhp-carousel__track-outer">
+          <div class="plhp-carousel__track" id="plhp-carousel-track">
+
+            <div class="plhp-sol-card" data-sol-card>
+              <div class="plhp-sol-card__overlay" aria-hidden="true"></div>
+              <div class="plhp-sol-card__body">
+                <h3>Law Enforcement</h3>
+                <p>Accelerating criminal investigations with comprehensive digital intelligence and evidence analysis.</p>
+                <a href="#" class="plhp-sol-card__cta">Learn More <span aria-hidden="true">›</span></a>
+              </div>
+            </div>
+
+            <div class="plhp-sol-card" data-sol-card>
+              <div class="plhp-sol-card__overlay" aria-hidden="true"></div>
+              <div class="plhp-sol-card__body">
+                <h3>National Security</h3>
+                <p>Supporting national security operations with real-time threat detection and data analysis.</p>
+                <a href="#" class="plhp-sol-card__cta">Learn More <span aria-hidden="true">›</span></a>
+              </div>
+            </div>
+
+            <div class="plhp-sol-card" data-sol-card>
+              <div class="plhp-sol-card__overlay" aria-hidden="true"></div>
+              <div class="plhp-sol-card__body">
+                <h3>Defense</h3>
+                <p>Equipping defense teams with mission-grade intelligence for operational advantage.</p>
+                <a href="#" class="plhp-sol-card__cta">Learn More <span aria-hidden="true">›</span></a>
+              </div>
+            </div>
+
+            <div class="plhp-sol-card" data-sol-card>
+              <div class="plhp-sol-card__overlay" aria-hidden="true"></div>
+              <div class="plhp-sol-card__body">
+                <h3>Enterprise</h3>
+                <p>Protecting corporate assets and ensuring operational security with proactive intelligence.</p>
+                <a href="#" class="plhp-sol-card__cta">Learn More <span aria-hidden="true">›</span></a>
+              </div>
+            </div>
+
+            <div class="plhp-sol-card" data-sol-card>
+              <div class="plhp-sol-card__overlay" aria-hidden="true"></div>
+              <div class="plhp-sol-card__body">
+                <h3>Government</h3>
+                <p>Enabling agencies to act on unified intelligence with compliant, auditable workflows.</p>
+                <a href="#" class="plhp-sol-card__cta">Learn More <span aria-hidden="true">›</span></a>
+              </div>
+            </div>
+
+            <div class="plhp-sol-card" data-sol-card>
+              <div class="plhp-sol-card__overlay" aria-hidden="true"></div>
+              <div class="plhp-sol-card__body">
+                <h3>Intelligence Agencies</h3>
+                <p>Turning fragmented signals into decisive insight across communications and OSINT.</p>
+                <a href="#" class="plhp-sol-card__cta">Learn More <span aria-hidden="true">›</span></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="plhp-carousel__arrow plhp-carousel__arrow--prev" id="plhp-carousel-prev" aria-label="Previous slide">
+          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="14,4 7,11 14,18"/></svg>
+        </button>
+        <button class="plhp-carousel__arrow plhp-carousel__arrow--next" id="plhp-carousel-next" aria-label="Next slide">
+          <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="8,4 15,11 8,18"/></svg>
+        </button>
+      </div>
+
+      <div class="plhp-carousel__dots" id="plhp-carousel-dots" role="group" aria-label="Carousel navigation"></div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       NEW: WHAT SETS APART — "What Sets Penlink Apart"
+       ================================================================= -->
+  <section class="plhp-block plhp-features" data-screen-label="What Sets Penlink Apart (NEW)" aria-labelledby="plhp-features-heading">
+    <div class="plhp-container">
+      <div class="plhp-features__header">
+        <span class="plhp-features__eyebrow">Our Platform</span>
+        <h2 id="plhp-features-heading">
+          What sets Penlink <span class="plhp-accent">apart</span>
+        </h2>
+        <p>Penlink delivers intelligence-driven security through an advanced AI platform — combining cutting-edge technology, exceptional support, and deep operational expertise for comprehensive, insightful solutions.</p>
+      </div>
+
+      <div class="plhp-features__grid">
+
+        <div class="plhp-feat-card">
+          <div class="plhp-feat-card__icon plhp-feat-card__icon--grad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3>Comprehensive Platform</h3>
+          <p>Seamlessly unifies digital evidence and open-source intelligence for a holistic view.</p>
+          <a href="#" class="plhp-btn plhp-btn--lime">Our Platform</a>
+        </div>
+
+        <div class="plhp-feat-card">
+          <div class="plhp-feat-card__icon plhp-feat-card__icon--blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="6" height="6"/><path d="M20 14h2M20 10h2M14 20v2M10 20v2M4 14H2M4 10H2M10 4V2M14 4V2"/><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+          </div>
+          <h3>Advanced Technology</h3>
+          <p>Utilizes cutting-edge AI and analytics to deliver precise, actionable insights.</p>
+          <a href="#" class="plhp-btn plhp-btn--lime">Our Technology</a>
+        </div>
+
+        <div class="plhp-feat-card">
+          <div class="plhp-feat-card__icon plhp-feat-card__icon--grad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>Trusted Expertise</h3>
+          <p>Relied upon by global governments and enterprises for critical security operations.</p>
+          <a href="#" class="plhp-btn plhp-btn--lime">About Us</a>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- =================================================================
        NEW: MISSION  (new block — see partials/03-mission.html)
        ================================================================= -->
-  <div class="pv-bg-picker" id="pv-bg-picker" role="toolbar" aria-label="Mission background swatches (preview only)">
-    <div class="pv-bg-picker__inner">
-      <span class="pv-bg-picker__label">Mission bg</span>
-      <div class="pv-bg-picker__swatches">
-        <button class="pv-bg-picker__swatch" data-bg="cream" aria-pressed="true" style="background:#fbf9f4" title="Warm paper"></button>
-        <button class="pv-bg-picker__swatch" data-bg="gray" aria-pressed="false" style="background:#f2f5fa" title="Light gray"></button>
-        <button class="pv-bg-picker__swatch" data-bg="blue" aria-pressed="false" style="background:#eef4ff" title="Pale blue"></button>
-        <button class="pv-bg-picker__swatch" data-bg="lime" aria-pressed="false" style="background:#f5fbe6" title="Pale lime"></button>
-        <button class="pv-bg-picker__swatch" data-bg="cyan-mint" aria-pressed="false" style="background:#ecfbf7" title="Cyan mint"></button>
-        <button class="pv-bg-picker__swatch" data-bg="white" aria-pressed="false" style="background:#ffffff" title="Pure white"></button>
-      </div>
-      <span class="pv-bg-picker__name" id="pv-bg-name">Warm paper</span>
-    </div>
-  </div>
 
   <section class="plhp-block plhp-mission" data-bg="cream" data-screen-label="03 Mission (NEW)" aria-labelledby="plhp-mission-heading">
     <div class="plhp-container">
@@ -2175,6 +2640,64 @@
   </section>
 
   <!-- =================================================================
+       NEW: COMPLIANT — "Compliant and Certified" trust band
+       ================================================================= -->
+  <section class="plhp-block plhp-certs" data-screen-label="Compliant and Certified (NEW)" aria-labelledby="plhp-certs-heading">
+    <div class="plhp-container">
+      <div class="plhp-certs__header">
+        <h2 id="plhp-certs-heading">
+          Compliant and <span class="plhp-accent">certified</span>
+        </h2>
+        <p>We place the utmost importance on information security and comply with the most rigorous security standards, global regulations and privacy protection laws — ensuring safe, compliant workflows for our customers.</p>
+      </div>
+
+      <div class="plhp-certs__badges">
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">SOC 2</div></div>
+          <span class="plhp-cert-item__label">SOC 2</span>
+        </div>
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">Human Rights</div></div>
+          <span class="plhp-cert-item__label">Human Rights</span>
+        </div>
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">ISO 27001</div></div>
+          <span class="plhp-cert-item__label">ISO 27001</span>
+        </div>
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">CSA STAR</div></div>
+          <span class="plhp-cert-item__label">CSA STAR</span>
+        </div>
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">Cyber Maturity</div></div>
+          <span class="plhp-cert-item__label">Cyber Maturity</span>
+        </div>
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">NIST 800-171</div></div>
+          <span class="plhp-cert-item__label">NIST 800-171</span>
+        </div>
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">CISA</div></div>
+          <span class="plhp-cert-item__label">CISA</span>
+        </div>
+
+        <div class="plhp-cert-item">
+          <div class="plhp-cert-item__ring"><div class="plhp-cert-item__inner">CJIS</div></div>
+          <span class="plhp-cert-item__label">CJIS</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
        FOOTER — existing penlink.com chrome (preview-only)
        ================================================================= -->
   <footer class="pv-footer" data-screen-label="Footer (existing)">
@@ -2249,6 +2772,67 @@
   <!-- Production JS (drives the CoAnalyst 360 placeholder animation) -->
   <script defer="" src="70b2cd97-3339-4383-9e03-6cb1bd22fd36"></script>
 
+  <!-- Power Carousel JS -->
+  <script>
+    (function () {
+      'use strict';
+      var GAP = 28;
+      var active = 0;
+      var track = document.getElementById('plhp-carousel-track');
+      var dotsEl = document.getElementById('plhp-carousel-dots');
+      var prevBtn = document.getElementById('plhp-carousel-prev');
+      var nextBtn = document.getElementById('plhp-carousel-next');
+      if (!track) return;
+
+      var cards = Array.prototype.slice.call(track.querySelectorAll('[data-sol-card]'));
+      var labels = [
+        'Law Enforcement', 'National Security', 'Defense',
+        'Enterprise', 'Government', 'Intelligence Agencies'
+      ];
+      var n = cards.length;
+
+      labels.forEach(function (label, i) {
+        var btn = document.createElement('button');
+        btn.className = 'plhp-carousel__dot' + (i === 0 ? ' is-active' : '');
+        btn.setAttribute('aria-label', 'Go to slide ' + (i + 1) + ': ' + label);
+        btn.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+        btn.addEventListener('click', function () { go(i); });
+        dotsEl.appendChild(btn);
+      });
+
+      function cardW() {
+        return window.innerWidth < 680 ? 300 : window.innerWidth < 960 ? 420 : 560;
+      }
+
+      function go(idx) {
+        active = ((idx % n) + n) % n;
+        update();
+      }
+
+      function update() {
+        var w = cardW();
+        cards.forEach(function (c, i) {
+          c.classList.toggle('is-active', i === active);
+          c.style.cursor = i === active ? 'default' : 'pointer';
+          c.style.width = w + 'px';
+        });
+        track.style.transform = 'translateX(' + (-(active * (w + GAP) + w / 2)) + 'px)';
+        dotsEl.querySelectorAll('.plhp-carousel__dot').forEach(function (d, i) {
+          d.classList.toggle('is-active', i === active);
+          d.setAttribute('aria-pressed', i === active ? 'true' : 'false');
+        });
+      }
+
+      cards.forEach(function (c, i) {
+        c.addEventListener('click', function () { if (i !== active) go(i); });
+      });
+      prevBtn.addEventListener('click', function () { go(active - 1); });
+      nextBtn.addEventListener('click', function () { go(active + 1); });
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    })();
+  </script>
+
   <!-- Preview-only: swap the nav logo to color when scrolled past the hero -->
   <script>
     (function () {
@@ -2267,34 +2851,6 @@
     })();
   </script>
 
-  <!-- Preview-only: mission background swatch picker -->
-  <script>
-    (function () {
-      var NAMES = {
-        'cream':     'Warm paper',
-        'gray':      'Light gray',
-        'blue':      'Pale blue',
-        'lime':      'Pale lime',
-        'cyan-mint': 'Cyan mint',
-        'white':     'Pure white'
-      };
-      var mission = document.querySelector('.plhp-mission');
-      var picker  = document.getElementById('pv-bg-picker');
-      var nameEl  = document.getElementById('pv-bg-name');
-      if (!mission || !picker) return;
-
-      picker.addEventListener('click', function (e) {
-        var btn = e.target.closest('.pv-bg-picker__swatch');
-        if (!btn) return;
-        var bg = btn.getAttribute('data-bg');
-        mission.setAttribute('data-bg', bg);
-        picker.querySelectorAll('.pv-bg-picker__swatch').forEach(function (b) {
-          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-        });
-        if (nameEl) nameEl.textContent = NAMES[bg] || bg;
-      });
-    })();
-  </script>
 
 
 </body></html>
