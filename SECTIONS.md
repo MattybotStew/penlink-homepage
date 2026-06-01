@@ -203,7 +203,7 @@ Find `<section class="plhp-mission">` and modify:
 | Hero image | `public/assets/ca3c8c3a-6326-4956-a29d-be70aaef602f.jpg` |
 | SVG icons | `public/assets/*.svg` |
 | Web fonts | `public/fonts/*.woff2` |
-| Design specs | `gemini-code-*.md` |
+| Design reference | `DESIGN.md` |
 
 ---
 

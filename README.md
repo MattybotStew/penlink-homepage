@@ -17,7 +17,7 @@ penlink/
 │   └── scripts/                # Extracted JavaScript modules
 ├── package.json                # Dependencies & build scripts
 ├── assetMap.json               # Asset UUID mapping
-├── gemini-code-*.md            # Design specifications
+├── DESIGN.md                   # Visual design reference
 └── README.md                   # This file
 ```
 
@@ -193,4 +193,4 @@ A: Edit the CSS variables in the `<style>` block:
 
 ## Contact
 
-For design specs and architecture details, see `gemini-code-*.md`.
+For design specs and architecture details, see [DESIGN.md](DESIGN.md).

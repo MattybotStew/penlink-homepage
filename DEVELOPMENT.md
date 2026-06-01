@@ -21,7 +21,7 @@ open http://localhost:8080
 ### Core Files
 - **`public/index.html`** — Complete app (edit here for content/styles)
 - **`README.md`** — Project overview & deployment guide
-- **`SECTIONS.md`** — Detailed guide to each section (3 blocks + templates)
+- **[SECTIONS.md](SECTIONS.md)** — Detailed guide to each section (3 blocks + templates)
 - **`package.json`** — Dependencies & npm scripts
 - **`.gitignore`** — Git ignore rules
 
@@ -31,8 +31,7 @@ open http://localhost:8080
 - **`public/images/`** — Logos (logoWhite.png, logoColor.png)
 
 ### Root-level Assets
-- **`20260515-1319-35.8159791.mp4`** — Hero video background
-- **`gemini-code-*.md`** — Design architecture specs
+- **[DESIGN.md](DESIGN.md)** — Visual design reference
 - **`index.html`** — Old bundled version (keep for reference)
 
 ---
@@ -371,6 +370,7 @@ If you need older browser support:
 
 1. **Read [SECTIONS.md](SECTIONS.md)** for detailed editing guides
 2. **Read [README.md](README.md)** for deployment & build info
+3. **Read [DESIGN.md](DESIGN.md)** for colors, typography, and component specs
 3. **Edit `public/index.html`** to customize content
 4. **Test with `npm run serve`**
 5. **Commit & push to GitHub**
