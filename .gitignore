@@ -35,3 +35,7 @@ npm-debug.log*
 
 # Temp / AI-generated files
 gemini-code-*.md
+
+# figma-pipeline generated artifacts
+figma-output.json
+src/figma/

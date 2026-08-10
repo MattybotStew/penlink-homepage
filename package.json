@@ -6,12 +6,26 @@
   "scripts": {
     "start": "npx http-server public -p 8080 -o",
     "serve": "npx http-server public -p 8080",
-    "build": "node build.js"
+    "build": "node build.js",
+    "figma:init": "figma init --project .",
+    "figma:fetch": "figma fetch --project .",
+    "figma:tokens": "figma tokens --project .",
+    "figma:assets": "figma assets --project .",
+    "figma:components": "figma components --project .",
+    "figma:sync": "figma sync --project ."
   },
-  "keywords": ["penlink", "coanalyst", "agentic-ai"],
+  "keywords": [
+    "penlink",
+    "coanalyst",
+    "agentic-ai"
+  ],
   "author": "Penlink Team",
   "license": "MIT",
   "devDependencies": {
     "http-server": "^14.1.1"
+  },
+  "packageManager": "pnpm@11.21.0",
+  "engines": {
+    "node": ">=20"
   }
 }
