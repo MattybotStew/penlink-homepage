@@ -1,0 +1,13 @@
+---
+description: Figma MCP server rules
+globs:
+alwaysApply: true
+---
+
+# Figma MCP
+
+- Use the official remote server at `https://mcp.figma.com/mcp`.
+- When implementing a design, paste a Figma URL and run `get_design_context` + `get_screenshot` before writing UI.
+- Treat MCP React/Tailwind as a design representation, not final code. Match this repo’s stack, tokens, and components.
+- If MCP returns a localhost image/SVG URL, use it directly. Do not add icon packages or placeholders for those assets.
+- For bulk tokens/assets/components, prefer `figma sync` (see `FIGMA.md` and `figma.config.json`).
