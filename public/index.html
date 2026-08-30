@@ -979,6 +979,18 @@
   gap: 14px;
   flex: 1;
   min-height: 0;
+  /* If the completed content is taller than the fixed-aspect frame, let it
+     scroll instead of being clipped by the frame's overflow:hidden. */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
+}
+.plhp-co360__anim-body::-webkit-scrollbar { width: 6px; }
+.plhp-co360__anim-body::-webkit-scrollbar-track { background: transparent; }
+.plhp-co360__anim-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
 }
 
 /* Message bubble */
@@ -1836,7 +1848,9 @@
   .plhp-hero__trust   { gap: 12px; font-size: 13px; }
 
   /* CoAnalyst 360 */
-  .plhp-co360__anim-frame { padding: 18px; }
+  /* On small screens the fixed aspect-ratio box is too short to hold the
+     full completed conversation, so let the frame grow to fit content. */
+  .plhp-co360__anim-frame { padding: 18px; aspect-ratio: auto; min-height: 360px; }
 
   /* Carousel */
   .plhp-carousel__stage { height: 340px; }
